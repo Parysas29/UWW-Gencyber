@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xterm -maximized -fa 'Monospace' -fs 20 /usr/local/bin/agreement
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=GenCyber Camp User Agreement
+Comment=Display GenCyber Camp User Agreement on login
+RunHook=0

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=firefox /opt/cyberchef/CyberChef_v10.19.0.html
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=false
+Name=CyberChef
+Comment=CyberChef Launcher
+Icon=/opt/cyberchef/images/cyberchef-128x128.png

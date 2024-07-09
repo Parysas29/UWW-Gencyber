@@ -114,6 +114,33 @@ install_CyberChef()
 # should be included in the main() function unless you are 
 # currently testing the code in that function.
 #
+accessibility()
+ {
+  mv ./orca-customizations.py ~/.local/share/orca/orca-customizations.py
+  
+  
+  #sudo apt install -y python3-pip
+
+
+  ##git clone https://github.com/rhasspy/piper.git
+  ##cd ./piper/src/python_run
+  ##sudo pip install piper-tts
+  ##alsa-utils
+
+
+  # download and install directly from github
+  #sudo pip install git+https://github.com/coqui-ai/TTS
+  #git clone https://github.com/coqui-ai/TTS.git
+  #cd ./TTS
+  #sudo pip3 install -r ./requirements.txt
+  #sudo pip install TTS  # from PyPI
+  #sed -i '$ a\export PATH="~/.local/bin:$PATH"' ~/.bashrc
+  #source ~/.bashrc
+
+
+  
+ }
+
 main() 
   {
     install_packages

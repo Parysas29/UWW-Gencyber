@@ -4,7 +4,7 @@ This will serve as our location for documentations, scripts, config files and an
 
 # Documentions
 
-## Small Store
+## Small Story
 It was originally planned to creat a customized installer iso file with everything preconfigured.
 However in the course of doing that I learned a very valuable thing.
 Live Boot ISO, as in the kind that you load onto a USB and then that USB have everything you need to run the system from that USB can be customized to your heart content.

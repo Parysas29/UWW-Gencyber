@@ -14,6 +14,12 @@ set_caching()
     
   }
 
+update_system()
+  {
+    # This will update the system and install any updates that are available.
+    sudo apt update
+    sudo apt full-upgrade -y
+  }
 
 install_packages()
   {
@@ -55,6 +61,21 @@ xfce_customization()
     xfconf-query -c xfce4-panel -p /plugins/plugin-9/miniature-view -t 'bool' -s 'true'
     #xfconf-query -c xfce4-panel -p /plugins/plugin-9/workspace-scrolling -t 'bool' -s 'false'
     xfconf-query -n -c xfce4-panel -p /panels/dark-mode -t 'bool' -s 'true'
+  }
+
+disable_screensaver()
+  {
+    # This will disable the screensaver and set the power management to never turn off the display.
+    xfconf-query -c xfce4-power-manager -p /general/DisplayPowerManagementEnabled -s false
+    xfconf-query -c xfce4-power-manager -p /general/DisplayIdleDelay -s 0
+    # xfconf-query -c xfce4-power-manager -p /general/HandleDisplayPowerKey -s 'nothing'
+    xfconf-query -c xfce4-power-manager -p /general/HandleLidSwitch -s 'nothing'
+    xfconf-query -c xfce4-power-manager -p /general/HandleLidSwitchDocked -s 'nothing'
+    
+    sleep 1; xset s off
+    sleep 1; xset s noblank
+    sleep 1; xset s noexpose
+    sleep 1; xset -dpms
   }
 # configure_wifi is an abandoned function.
 ## 1) it would have required me to store the password in plain text.
@@ -135,16 +156,15 @@ accessibility()
   #sudo pip3 install -r ./requirements.txt
   #sudo pip install TTS  # from PyPI
   #sed -i '$ a\export PATH="~/.local/bin:$PATH"' ~/.bashrc
-  #source ~/.bashrc
-
-
-  
+  #source ~/.bashrc  
  }
 
 main() 
   {
+    update_system
     install_packages
     xfce_customization
+    disable_screensaver
     setting_up_login_banner
     get_mac_script
     install_CyberChef
